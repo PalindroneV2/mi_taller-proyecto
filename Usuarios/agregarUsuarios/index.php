@@ -77,7 +77,7 @@ include("../../db.php");
                         <option id="id_nivel_accesso" name="id_nivel_accesso" value="1">Administrador</option>
                     </select>
                 </div>
-                <input class="btn btn-primary d-block w-100" type="submit" style="background: #0d6efd;" id="enviar_u" name="enviar_u" value="Enviar">
+                    <input class="btn btn-primary" type="submit" style="background: rgb(253,114,13);" id="enviar_u" name="enviar_u" value="Enviar">
                 </div>
             </form>
             

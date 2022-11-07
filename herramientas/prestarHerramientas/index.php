@@ -80,9 +80,7 @@ include("../../db.php");
                 </div>
 
                 <div class="mb-3">
-                    <center>
-                        <input class="btn btn-primary d-block w-100" type="submit" style="background: #0d6efd;" id="usar_h" name="usar_h" value="Enviar">
-                    </center>
+                    <input class="btn btn-primary" type="submit" style="background: rgb(253,114,13);" id="usar_h" name="usar_h" value="Enviar">
                 </div>
 
             </form>
