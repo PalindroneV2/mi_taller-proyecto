@@ -19,6 +19,7 @@ include("../../db.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/css/pantallacarga.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
@@ -30,6 +31,7 @@ include("../../db.php");
 </head>
 
 <body style="background: url(&quot;assets/img/clipboard-image-1.png&quot;), #fd720d;">
+    <div class="loader"></div>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="../../Menu/index.php">CAMINOSA | Mi Taller</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -55,6 +57,11 @@ include("../../db.php");
             <?php } ?>
 
             <form action="/registro.php" method="POST" style="color: rgb(255,15,0);background: rgba(253,114,13,0.11);border-top-color: rgb(253,114,13);">
+                
+                <div class="mb-3">
+                    <div id="reader"></div>
+                </div>
+
                 <div class="mb-3">
                     <label class="form-label" for="cod_barra">Codigo de barras</label>
                     <input class="form-control" type="text" id="cod_barra" name="cod_barra"
@@ -72,7 +79,9 @@ include("../../db.php");
                         maxlength="50" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32)">
                 </div>
                 <div class="mb-3">
-                    <input class="btn btn-primary" type="submit" style="background: rgb(253,114,13);" id="enviar_h" name="enviar_h" value="Enviar">
+                    <center>
+                        <input class="btn btn-primary" type="submit" style="background: #0d6efd;" id="enviar_h" name="enviar_h" value="Enviar">
+                    </center>
                 </div>
             </form>
 
@@ -83,6 +92,19 @@ include("../../db.php");
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+
+    <script type="text/javascript">
+        function onScanSuccess(qrCodeMessage) {
+            document.getElementById('cod_barra').value = qrCodeMessage;
+        }
+        function onScanError(errorMessage) {
+          //handle scan error
+        }
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
+    </script>
+    
 </body>
 
 </html>

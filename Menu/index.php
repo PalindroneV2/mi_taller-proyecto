@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/pantallacarga.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="assets/css/Features-Centered-Icons.css">
@@ -29,6 +30,7 @@
 </head>
 
 <body style="background: url(&quot;assets/img/clipboard-image-1.png&quot;), #fd720d;">
+    <div class="loader"></div>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="../../Menu/index.php">CAMINOSA | Mi Taller</a>
             <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
@@ -62,6 +64,9 @@
                     </div>
                     <div class="px-3">
 
+                        <form action="../herramientas/estadoHerramientas/index.php">
+                            <button class="btn btn-primary" type="submit" style="background: rgb(253,114,13);border-color: rgba(255,255,255,0);border-radius: 27px;width: 225px;margin: 5px;">Estado de Herramientas</button>
+                        </form>
                         <form action="../herramientas/prestarHerramientas/index.php">
                             <button class="btn btn-primary" type="submit" style="background: rgb(253,114,13);border-color: rgba(255,255,255,0);border-radius: 27px;width: 225px;margin: 5px;">Prestar Herramientas</button>
                         </form>
@@ -71,10 +76,7 @@
                         <form action="../herramientas/agregarHerramientas/index.php">
                             <button class="btn btn-primary" type="submit" style="background: rgb(253,114,13);border-color: rgba(255,255,255,0);border-radius: 27px;width: 225px;margin: 5px;">Agregar Herramienta</button>
                         </form>
-                        <form action="../herramientas/estadoHerramientas/index.php">
-                            <button class="btn btn-primary" type="submit" style="background: rgb(253,114,13);border-color: rgba(255,255,255,0);border-radius: 27px;width: 225px;margin: 5px;">Estado de Herramientas</button>
-                        </form>
-                        
+
                     </div>
                 </div>
             </div>
@@ -87,14 +89,14 @@
                     </div>
                     <div class="px-3">
 
+                        <form action="../Refacciones/verRefacciones/index.php">
+                            <button class="btn btn-primary" type="submit" style="background: rgb(253,114,13);border-color: rgba(255,255,255,0);border-radius: 27px;width: 225px;margin: 5px;">Ver Refacciones</button>
+                        </form>
                         <form action="../Refacciones/usarRefacciones/index.php">
                             <button class="btn btn-primary" type="submit" style="background: rgb(253,114,13);border-color: rgba(255,255,255,0);border-radius: 27px;width: 225px;margin: 5px;">Usar Refacción</button>
                         </form>
                         <form action="../Refacciones/agregarRefacciones/index.php">
                             <button class="btn btn-primary" type="submit" style="background: rgb(253,114,13);border-color: rgba(255,255,255,0);border-radius: 27px;width: 225px;margin: 5px;">Agregar Refacción</button>
-                        </form>
-                        <form action="../Refacciones/verRefacciones/index.php">
-                            <button class="btn btn-primary" type="submit" style="background: rgb(253,114,13);border-color: rgba(255,255,255,0);border-radius: 27px;width: 225px;margin: 5px;">Ver Refacciones</button>
                         </form>
 
                     </div>

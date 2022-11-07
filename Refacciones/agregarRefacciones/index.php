@@ -53,6 +53,11 @@ include("../../db.php");
             </div>
             <?php } ?>
             <form action="../../registro.php" method="POST" style="color: rgb(255,15,0);background: rgba(253,114,13,0.11);border-top-color: rgb(253,114,13);">
+                
+                <div class="mb-3">
+                    <div id="reader"></div>
+                </div>
+
                 <div class="mb-3">
                     <label class="form-label" for="cod_barra">Codigo de Barras</label>
                     <input class="form-control" type="number" id="cod_barra" name="cod_barra"
@@ -74,7 +79,7 @@ include("../../db.php");
                         maxlength="4" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
                 </div>
                 <div class="mb-3">
-                    <input class="btn btn-primary" type="submit" style="background: rgb(253,114,13);" id="enviar_r" name="enviar_r" value="Enviar">
+                    <input class="btn btn-primary d-block w-100" type="submit" style="background: #0d6efd;" id="enviar_r" name="enviar_r" value="Enviar">
                 </div>
             </form>
             
@@ -84,6 +89,20 @@ include("../../db.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+    <script src="assets/js/qrcode.js"></script>
+
+    <script type="text/javascript">
+        function onScanSuccess(qrCodeMessage) {
+            document.getElementById('cod_barra').value = qrCodeMessage;
+        }
+        function onScanError(errorMessage) {
+          //handle scan error
+        }
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
+    </script>
 </body>
 
 </html>
